@@ -1,17 +1,8 @@
 import { useEffect } from 'react';
-import type { ReactNode } from 'react';
 import { X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-interface ModalProps {
-  isOpen: boolean;
-  onClose: () => void;
-  title?: string;
-  children: ReactNode;
-  maxWidth?: 'sm' | 'md' | 'lg' | 'xl';
-}
-
-const Modal = ({ isOpen, onClose, title, children, maxWidth = 'md' }: ModalProps) => {
+const Modal = ({ isOpen, onClose, title, children, maxWidth = 'md' }) => {
   // Prevent scrolling on body when modal is open
   useEffect(() => {
     if (isOpen) {

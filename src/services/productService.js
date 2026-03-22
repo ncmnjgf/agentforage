@@ -1,30 +1,29 @@
 import { mockProducts } from '../data/mockProducts';
-import type { Product } from '../types';
 
 /**
- * Simulated product service for AgentForge MVP.
+ * Simulated product service for Aivora MVP.
  * Replace with real API calls using Axios later.
  */
 
-const delay = (ms: number) => new Promise(res => setTimeout(res, ms));
+const delay = (ms) => new Promise(res => setTimeout(res, ms));
 
 export const productService = {
-  getProducts: async (): Promise<Product[]> => {
+  getProducts: async () => {
     await delay(600);
     return mockProducts;
   },
 
-  getProductById: async (id: string): Promise<Product | undefined> => {
+  getProductById: async (id) => {
     await delay(400);
     return mockProducts.find(p => p.id === id);
   },
 
-  getFeaturedProducts: async (): Promise<Product[]> => {
+  getFeaturedProducts: async () => {
     await delay(800);
     return mockProducts.slice(0, 3);
   },
 
-  searchProducts: async (query: string): Promise<Product[]> => {
+  searchProducts: async (query) => {
     await delay(500);
     const q = query.toLowerCase();
     return mockProducts.filter(p => 
@@ -34,8 +33,8 @@ export const productService = {
     );
   },
   
-  publishProduct: async (productData: Partial<Product>) => {
+  publishProduct: async (productData) => {
     await delay(1500);
-    return { ...productData, id: `agent-${Date.now()}` } as Product;
+    return { ...productData, id: `agent-${Date.now()}` };
   }
 };

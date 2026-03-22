@@ -1,12 +1,6 @@
 import { Loader2 } from 'lucide-react';
 
-interface LoaderProps {
-  size?: 'sm' | 'md' | 'lg' | 'xl';
-  text?: string;
-  fullScreen?: boolean;
-}
-
-const Loader = ({ size = 'md', text, fullScreen = false }: LoaderProps) => {
+const Loader = ({ size = 'md', text, fullScreen = false }) => {
   const sizes = {
     sm: 'w-4 h-4',
     md: 'w-8 h-8',

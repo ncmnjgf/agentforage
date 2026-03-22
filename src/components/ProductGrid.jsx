@@ -1,13 +1,7 @@
 import { motion } from 'framer-motion';
-import type { Product } from '../types';
 import ProductCard from './ProductCard';
 
-interface ProductGridProps {
-  products: Product[];
-  columns?: 2 | 3 | 4;
-}
-
-const ProductGrid = ({ products, columns = 3 }: ProductGridProps) => {
+const ProductGrid = ({ products, columns = 3 }) => {
   const staggerContainer = {
     animate: {
       transition: {

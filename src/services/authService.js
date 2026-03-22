@@ -1,13 +1,13 @@
 /**
- * Simulated authentication service for AgentForge MVP.
+ * Simulated authentication service for Aivora MVP.
  * Replace with real API calls using Axios later.
  */
 
 // Simulates network delay
-const delay = (ms: number) => new Promise(res => setTimeout(res, ms));
+const delay = (ms) => new Promise(res => setTimeout(res, ms));
 
 export const authService = {
-  login: async (email: string, _password?: string) => {
+  login: async (email, _password) => {
     await delay(800);
     // Real implementation would pass credentials and receive JWT
     return {
@@ -18,7 +18,7 @@ export const authService = {
     };
   },
 
-  signup: async (name: string, email: string, _password?: string) => {
+  signup: async (name, email, _password) => {
     await delay(1200);
     return {
       id: `user-${Date.now()}`,
@@ -33,7 +33,7 @@ export const authService = {
     return true;
   },
 
-  verifySession: async (token: string) => {
+  verifySession: async (token) => {
     await delay(500);
     return token.startsWith('fake-jwt');
   }

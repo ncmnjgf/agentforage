@@ -17,7 +17,7 @@ const Login = () => {
   
   const from = location.state?.from?.pathname || '/dashboard';
 
-  const handleLogin = (e: React.FormEvent) => {
+  const handleLogin = (e) => {
     e.preventDefault();
     setIsLoading(true);
     
@@ -38,11 +38,9 @@ const Login = () => {
       <Card padding="lg" className="w-full max-w-md relative z-10 border-slate-700 bg-slate-900/80">
         <div className="flex flex-col items-center justify-center mb-8">
           <Link to="/" className="flex items-center gap-2 group mb-6">
-            <div className="bg-purple-600 p-2 rounded-lg">
-              <Sparkles className="w-6 h-6 text-white" />
-            </div>
+            <img src="/images/logoagent.jpg"  alt="Aivora Logo" className="w-10 h-10 object-contain" />
             <span className="text-2xl font-bold tracking-tight text-white">
-              AgentForge
+              Aivora
             </span>
           </Link>
           <h1 className="text-2xl font-bold text-slate-100">Welcome back</h1>

@@ -21,10 +21,11 @@ const Navbar = () => {
   }, [location.pathname]);
 
   const navLinks = [
-    { name: 'Home', path: '/' },
+    { name: 'Home',          path: '/' },
     { name: 'Browse Agents', path: '/browse' },
-    { name: 'Pricing', path: '/browse' },
-    { name: 'For Creators', path: '/browse' },
+    { name: 'Pricing',       path: '/pricing' },
+    { name: 'For Creators',  path: '/for-creators' },
+    { name: 'Dashboard',     path: '/dashboard' },
   ];
 
   return (
@@ -37,14 +38,16 @@ const Navbar = () => {
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-2 group">
-          <div className="bg-purple-600 p-2 rounded-lg group-hover:bg-purple-500 transition-colors">
-            <Sparkles className="w-5 h-5 text-white" />
-          </div>
-          <span className="text-xl font-bold tracking-tight text-white group-hover:text-purple-400 transition-colors">
-            AgentForge
-          </span>
-        </Link>
+<Link to="/" className="flex items-center gap-2 group">
+  <img 
+    src="/images/logoagent.jpg" 
+    alt="Aivora Logo" 
+    className="w-9 h-9 object-contain"
+  />
+  <span className="text-xl font-bold tracking-tight text-white group-hover:text-purple-400 transition-colors">
+    Aivora
+  </span>
+</Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center gap-8">
@@ -59,16 +62,6 @@ const Navbar = () => {
               {link.name}
             </Link>
           ))}
-          {isAuthenticated && (
-            <Link 
-              to="/dashboard"
-              className={`text-sm font-medium transition-colors hover:text-purple-400 ${
-                location.pathname === '/dashboard' ? 'text-purple-400' : 'text-slate-300'
-              }`}
-            >
-              Dashboard
-            </Link>
-          )}
         </nav>
 
         {/* Desktop Actions */}

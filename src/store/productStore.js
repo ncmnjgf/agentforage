@@ -1,17 +1,7 @@
 import { create } from 'zustand';
-import type { Product } from '../types';
 import { mockProducts } from '../data/mockProducts';
 
-interface ProductState {
-  products: Product[];
-  selectedProduct: Product | null;
-  searchQuery: string;
-  setSearchQuery: (query: string) => void;
-  setSelectedProduct: (product: Product | null) => void;
-  getFilteredProducts: () => Product[];
-}
-
-export const useProductStore = create<ProductState>((set, get) => ({
+export const useProductStore = create((set, get) => ({
   products: mockProducts,
   selectedProduct: null,
   searchQuery: '',

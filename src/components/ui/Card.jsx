@@ -1,12 +1,3 @@
-import type { HTMLAttributes, ReactNode } from 'react';
-
-interface CardProps extends HTMLAttributes<HTMLDivElement> {
-  children: ReactNode;
-  hoverEffect?: boolean;
-  glassmorphism?: boolean;
-  padding?: 'none' | 'sm' | 'md' | 'lg';
-}
-
 const Card = ({ 
   children, 
   className = '', 
@@ -14,7 +5,7 @@ const Card = ({
   glassmorphism = true,
   padding = 'md',
   ...props 
-}: CardProps) => {
+}) => {
   const paddings = {
     none: '',
     sm: 'p-4',

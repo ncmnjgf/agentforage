@@ -10,7 +10,7 @@ import Card from '../components/ui/Card';
 import Modal from '../components/ui/Modal';
 
 const ProductDetail = () => {
-  const { id } = useParams<{ id: string }>();
+  const { id } = useParams();
   const navigate = useNavigate();
   const { products, setSelectedProduct } = useProductStore();
   const { user, isAuthenticated, purchase } = useAuthStore();
@@ -44,7 +44,6 @@ const ProductDetail = () => {
     );
   }
 
-  // @ts-expect-error - Dynamic import based on string name
   const IconComponent = Icons[product.iconName] || Icons.HelpCircle;
 
   const features = [
@@ -189,7 +188,7 @@ const ProductDetail = () => {
             <div>
               <h3 className="text-lg font-bold text-slate-100 mb-1">Enterprise Grade Security</h3>
               <p className="text-slate-400 text-sm">
-                This agent has been audited by AgentForge security experts. All data is encrypted in transit and at rest. SOC2 Compliant.
+                This agent has been audited by Aivora security experts. All data is encrypted in transit and at rest. SOC2 Compliant.
               </p>
             </div>
           </motion.section>

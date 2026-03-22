@@ -1,18 +1,12 @@
 /**
- * Simulated order service for AgentForge MVP.
+ * Simulated order service for Aivora MVP.
  * Replace with real API calls and Stripe integration later.
  */
 
-const delay = (ms: number) => new Promise(res => setTimeout(res, ms));
-
-export interface OrderPayload {
-  userId: string;
-  productId: string;
-  paymentMethodId?: string;
-}
+const delay = (ms) => new Promise(res => setTimeout(res, ms));
 
 export const orderService = {
-  createOrder: async (payload: OrderPayload) => {
+  createOrder: async (payload) => {
     await delay(1200); // simulate payment processing
     
     // In a real app, you would initiate a Stripe Checkout and return the session ID
@@ -23,15 +17,15 @@ export const orderService = {
     };
   },
 
-  getPurchaseHistory: async (_userId: string) => {
+  getPurchaseHistory: async (_userId) => {
     await delay(500);
     return []; // mock empty history response
   },
 
-  downloadProductAsset: async (productId: string) => {
+  downloadProductAsset: async (productId) => {
     await delay(800); // simulate asset generation/zipping
     return {
-      downloadUrl: `https://mock.cdn.agentforge.com/downloads/${productId}.zip`
+      downloadUrl: `https://mock.cdn.Aivora.com/downloads/${productId}.zip`
     };
   }
 };

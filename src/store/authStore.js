@@ -1,23 +1,7 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 
-interface User {
-  id: string;
-  name: string;
-  email: string;
-  avatar?: string;
-  purchasedItems: string[];
-}
-
-interface AuthState {
-  user: User | null;
-  isAuthenticated: boolean;
-  login: (email: string) => void;
-  logout: () => void;
-  purchase: (productId: string) => void;
-}
-
-export const useAuthStore = create<AuthState>()(
+export const useAuthStore = create()(
   persist(
     (set) => ({
   user: null,
@@ -44,7 +28,7 @@ export const useAuthStore = create<AuthState>()(
   })),
     }),
     {
-      name: 'agentforge-auth', // localStorage key
+      name: 'Aivora-auth', // localStorage key
     }
   )
 );

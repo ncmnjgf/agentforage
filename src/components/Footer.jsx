@@ -12,11 +12,9 @@ const Footer = () => {
           {/* Brand */}
           <div className="col-span-1 md:col-span-1">
             <Link to="/" className="flex items-center gap-2 group mb-4">
-              <div className="bg-purple-600 p-1.5 rounded-md group-hover:bg-purple-500 transition-colors">
-                <Sparkles className="w-4 h-4 text-white" />
-              </div>
+              <img src="/images/logoagent.jpg"  alt="Aivora Logo" className="w-7 h-7 object-contain" />
               <span className="text-lg font-bold tracking-tight text-white">
-                AgentForge
+                Aivora
               </span>
             </Link>
             <p className="text-slate-400 text-sm leading-relaxed mb-6">
@@ -71,7 +69,7 @@ const Footer = () => {
         </div>
         
         <div className="pt-8 border-t border-slate-900 flex flex-col md:flex-row items-center justify-between text-slate-500 text-sm">
-          <p>© {currentYear} AgentForge. All rights reserved.</p>
+          <p>© {currentYear} Aivora. All rights reserved.</p>
           <div className="flex gap-4 mt-4 md:mt-0">
             <span>Built with React & Vite</span>
           </div>

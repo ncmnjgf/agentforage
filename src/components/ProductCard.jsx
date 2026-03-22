@@ -1,16 +1,10 @@
 import { Link } from 'react-router-dom';
 import * as Icons from 'lucide-react';
-import type { Product } from '../types';
 import Card from './ui/Card';
 import Button from './ui/Button';
 
-interface ProductCardProps {
-  product: Product;
-}
-
-const ProductCard = ({ product }: ProductCardProps) => {
+const ProductCard = ({ product }) => {
   // Dynamically resolve icon from lucide-react strings
-  // @ts-expect-error - Dynamic import based on string name
   const IconComponent = Icons[product.iconName] || Icons.HelpCircle;
 
   return (

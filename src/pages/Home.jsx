@@ -1,10 +1,11 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, Bot, Cpu, Search, Sparkles, TrendingUp, Zap } from 'lucide-react';
+import { ArrowRight, Bot, Cpu, TrendingUp, Zap } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Button from '../components/ui/Button';
 import Card from '../components/ui/Card';
 import ProductGrid from '../components/ProductGrid';
 import { getFeaturedProducts } from '../data/mockProducts';
+import HeroSection from '../components/HeroSection';
 
 const Home = () => {
   const fadeIn = {
@@ -30,49 +31,9 @@ const Home = () => {
 
   return (
     <div className="flex flex-col w-full overflow-hidden">
-      
-      {/* HERO SECTION */}
-      <section className="relative min-h-[90vh] flex items-center justify-center px-6 pt-20 pb-32">
-        <div className="absolute inset-0 z-0">
-          <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-full max-w-3xl h-[400px] bg-purple-600/20 blur-[120px] rounded-full mix-blend-screen pointer-events-none" />
-        </div>
-        
-        <div className="max-w-5xl mx-auto text-center z-10 relative">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-purple-500/10 border border-purple-500/20 text-purple-300 font-medium text-sm mb-8">
-              <Sparkles className="w-4 h-4" />
-              <span>Introducing AgentForge 2.0</span>
-            </div>
-            
-            <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-8 text-slate-100">
-              The Premier Marketplace for <br className="hidden md:block" />
-              <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400 bg-clip-text text-transparent animate-gradient bg-[length:200%_auto]">
-                Autonomous AI Agents
-              </span>
-            </h1>
-            
-            <p className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed">
-              Discover, deploy, and monetize state-of-the-art AI agents. 
-              Accelerate your workflow with enterprise-grade autonomous tools.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link to="/browse" className="w-full sm:w-auto">
-                <Button size="lg" className="w-full sm:w-auto" rightIcon={<ArrowRight className="w-5 h-5" />}>
-                  Explore Agents
-                </Button>
-              </Link>
-              <Button variant="secondary" size="lg" className="w-full sm:w-auto text-slate-300" leftIcon={<Search className="w-5 h-5" />}>
-                View Categories
-              </Button>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+
+      {/* HERO SECTION — new premium two-column layout */}
+      <HeroSection />
 
       {/* FEATURED PRODUCTS SECTION */}
       <section className="py-24 px-6 relative z-10 bg-slate-900/50">
@@ -169,7 +130,7 @@ const Home = () => {
                   Ready to transform your workflow?
                 </h2>
                 <p className="text-lg text-slate-300 mb-10">
-                  Join thousands of developers and businesses using AgentForge to scale operations with autonomous AI.
+                  Join thousands of developers and businesses using Aivora to scale operations with autonomous AI.
                 </p>
                 <div className="flex flex-col sm:flex-row justify-center gap-4">
                   <Button size="lg" className="px-8 shadow-purple-500/20">

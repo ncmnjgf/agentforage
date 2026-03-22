@@ -1,6 +1,4 @@
-import type { Product } from '../types';
-
-export const mockProducts: Product[] = [
+export const mockProducts = [
   {
     id: '1',
     title: 'AutoCoder Pro',

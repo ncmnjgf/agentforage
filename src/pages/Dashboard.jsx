@@ -9,7 +9,7 @@ import Button from '../components/ui/Button';
 const Dashboard = () => {
   const { user } = useAuthStore();
   const { products } = useProductStore();
-  const [activeTab, setActiveTab] = useState<'library' | 'creator'>('library');
+  const [activeTab, setActiveTab] = useState('library');
   
   const ownedProducts = products.filter(p => user?.purchasedItems?.includes(p.id));
 
