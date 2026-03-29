@@ -1,5 +1,5 @@
 /**
- * Simulated order service for Aivora MVP.
+ * Simulated order service for Sovereign MVP.
  * Replace with real API calls and Stripe integration later.
  */
 
@@ -25,7 +25,7 @@ export const orderService = {
   downloadProductAsset: async (productId) => {
     await delay(800); // simulate asset generation/zipping
     return {
-      downloadUrl: `https://mock.cdn.Aivora.com/downloads/${productId}.zip`
+      downloadUrl: `https://vault.sovereign.sh/downloads/${productId}.zip`
     };
   }
 };

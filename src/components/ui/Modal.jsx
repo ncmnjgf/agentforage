@@ -43,7 +43,7 @@ const Modal = ({ isOpen, onClose, title, children, maxWidth = 'md' }) => {
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: 10 }}
               transition={{ type: 'spring', damping: 25, stiffness: 300 }}
-              className={`w-full ${maxWClasses[maxWidth]} bg-slate-900 border border-slate-700/50 shadow-2xl shadow-purple-900/10 rounded-2xl pointer-events-auto overflow-hidden flex flex-col max-h-full`}
+              className={`w-full ${maxWClasses[maxWidth]} bg-slate-900 border border-slate-700/50 shadow-2xl shadow-[var(--color-primary)]/10 rounded-2xl pointer-events-auto overflow-hidden flex flex-col max-h-full`}
             >
               {/* Header */}
               <div className="flex items-center justify-between px-6 py-4 border-b border-slate-800">

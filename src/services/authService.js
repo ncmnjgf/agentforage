@@ -1,5 +1,5 @@
 /**
- * Simulated authentication service for Aivora MVP.
+ * Simulated authentication service for Sovereign MVP.
  * Replace with real API calls using Axios later.
  */
 

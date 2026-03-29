@@ -1,7 +1,7 @@
 import { mockProducts } from '../data/mockProducts';
 
 /**
- * Simulated product service for Aivora MVP.
+ * Simulated product service for Sovereign MVP.
  * Replace with real API calls using Axios later.
  */
 

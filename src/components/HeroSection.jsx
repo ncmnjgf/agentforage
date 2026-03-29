@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Sparkles, Star, Zap, Bot, TrendingUp, Shield, Users } from 'lucide-react';
 import { Link } from 'react-router-dom';
-
 /* ── Mini AI Agent Card used in the right-side visual ── */
 const AgentCard = ({ icon: Icon, name, category, rating, price, color, delay = 0 }) => (
   <motion.div
@@ -44,18 +43,15 @@ const StatPill = ({ value, label, delay }) => (
 ═══════════════════════════════════════════════════════════ */
 const HeroSection = () => {
   const agents = [
-    { icon: Bot,        name: 'SupportGPT',    category: 'Customer Support', rating: '4.9', price: '$29/mo',  color: 'linear-gradient(135deg,#7c3aed,#a855f7)', delay: 0.35 },
-    { icon: TrendingUp, name: 'GrowthEngine',  category: 'Marketing AI',     rating: '4.8', price: '$49/mo',  color: 'linear-gradient(135deg,#2563eb,#3b82f6)', delay: 0.45 },
-    { icon: Zap,        name: 'CodeAssist',    category: 'Development',      rating: '4.9', price: '$19/mo',  color: 'linear-gradient(135deg,#0891b2,#06b6d4)', delay: 0.55 },
-    { icon: Shield,     name: 'SecureBot',     category: 'Security & Audit', rating: '4.7', price: '$39/mo',  color: 'linear-gradient(135deg,#059669,#10b981)', delay: 0.65 },
+    { icon: Bot,        name: 'Aviro Core',    category: 'General AI',     rating: '4.9', price: '$29/mo',  color: '#006a39', delay: 0.35 },
+    { icon: TrendingUp, name: 'GrowthEngine',   category: 'Marketing AI',    rating: '4.8', price: '$49/mo',  color: '#008649', delay: 0.45 },
+    { icon: Zap,        name: 'PrecisionUI',    category: 'Design Tools',    rating: '4.9', price: '$19/mo',  color: '#595f63', delay: 0.55 },
+    { icon: Shield,     name: 'SafeLicense',    category: 'Security',        rating: '4.7', price: '$39/mo',  color: '#bdcabd', delay: 0.65 },
   ];
-
   return (
     <section className="hero">
       {/* ── Background glows ── */}
-      <div className="hero__glow hero__glow--purple" />
-      <div className="hero__glow hero__glow--blue" />
-      <div className="hero__grid-overlay" />
+      <div className="hero__glow hero__glow--primary" />
 
       <div className="hero__inner">
         {/* ── LEFT COLUMN ── */}
@@ -68,7 +64,7 @@ const HeroSection = () => {
             className="hero__badge"
           >
             <Sparkles size={14} />
-            <span>Introducing Aivora&nbsp;&mdash; The AI Marketplace</span>
+            <span>Buy and Sell AI Agents</span>
           </motion.div>
 
           {/* Headline */}
@@ -78,9 +74,9 @@ const HeroSection = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="hero__headline"
           >
-            Build, Buy &amp; Sell
+            Build, Buy & Sell
             <br />
-            <span className="hero__headline--gradient">AI Agents</span>
+            <span className="hero__headline--accent">AI Agents</span>
           </motion.h1>
 
           {/* Subheading */}
@@ -90,8 +86,7 @@ const HeroSection = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="hero__subheading"
           >
-            Discover, deploy, and monetize powerful AI agents&nbsp;&mdash;
-            all in one marketplace.
+            Discover, deploy, and monetize powerful AI agents — all in one marketplace.
           </motion.p>
 
           {/* CTA Buttons */}
@@ -101,11 +96,11 @@ const HeroSection = () => {
             transition={{ duration: 0.6, delay: 0.3 }}
             className="hero__cta-group"
           >
-            <Link to="/browse" className="cta-primary">
+            <Link to="/browse" className="cta-primary hover:shadow-[0_20px_40px_-10px_rgba(0,147,81,0.3)] transition-all duration-300">
               Explore AI Agents
               <ArrowRight size={18} />
             </Link>
-            <Link to="/signup" className="cta-secondary">
+            <Link to="/for-creators" className="cta-secondary hover:bg-white hover:shadow-[0_8px_30px_-4px_rgba(0,0,0,0.05)] transition-all duration-300">
               Start Selling
             </Link>
           </motion.div>
@@ -117,23 +112,23 @@ const HeroSection = () => {
             transition={{ duration: 0.6, delay: 0.5 }}
             className="hero__trust"
           >
-            <Users size={14} />
-            Join&nbsp;<strong>early AI creators</strong>&nbsp;building the future
+            <Users size={14} className="text-[var(--color-primary)]" />
+            <strong>Join early AI creators</strong>&nbsp;building the future.
           </motion.p>
 
           {/* Stats */}
           <div className="hero__stats">
-            <StatPill value="2,400+"  label="AI Agents"      delay={0.55} />
-            <StatPill value="18k+"    label="Developers"     delay={0.65} />
-            <StatPill value="$4.2M+"  label="Creator Payouts" delay={0.75} />
+            <StatPill value="2,400+"  label="Digital Assets"      delay={0.55} />
+            <StatPill value="18k+"    label="Curators"            delay={0.65} />
+            <StatPill value="Instant" label="Deployment"          delay={0.75} />
           </div>
         </div>
 
         {/* ── RIGHT COLUMN – visual ── */}
         <motion.div
-          initial={{ opacity: 0, x: 40 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}
           className="hero__right"
         >
           {/* Dashboard shell */}
@@ -142,11 +137,10 @@ const HeroSection = () => {
               <span className="agent-dashboard__dot agent-dashboard__dot--red" />
               <span className="agent-dashboard__dot agent-dashboard__dot--yellow" />
               <span className="agent-dashboard__dot agent-dashboard__dot--green" />
-              <span className="agent-dashboard__title">Aivora Marketplace</span>
             </div>
 
             <p className="agent-dashboard__label">
-              <Sparkles size={12} /> Top Agents This Week
+              <Sparkles size={12} /> Curated Trending Assets
             </p>
 
             <div className="agent-dashboard__list">
@@ -157,22 +151,22 @@ const HeroSection = () => {
 
             {/* Bottom bar */}
             <div className="agent-dashboard__footer">
-              <span>🔥 Trending Now</span>
-              <span className="agent-dashboard__footer-cta">View all →</span>
+              <span>💎 Aviro Verified</span>
+              <span className="agent-dashboard__footer-cta">View All Tools →</span>
             </div>
           </div>
 
           {/* Floating badge */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.7 }}
-            animate={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.9 }}
             className="hero__float-badge"
           >
-            <span className="hero__float-badge-icon">⚡</span>
+            <span className="hero__float-badge-icon">✨</span>
             <div>
-              <p className="hero__float-badge-title">Live Deployments</p>
-              <p className="hero__float-badge-sub">+14 agents deployed today</p>
+              <p className="hero__float-badge-title">Editorial Grade</p>
+              <p className="hero__float-badge-sub">Quality verified by experts</p>
             </div>
           </motion.div>
         </motion.div>

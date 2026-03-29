@@ -19,7 +19,7 @@ export const mockProducts = [
     rating: 4.8,
     sales: '850',
     iconName: 'TrendingUp',
-    color: 'from-purple-500/20 to-pink-500/5',
+    color: 'from-emerald-500/20 to-teal-500/5',
     tag: 'Data Science',
     description: 'Extract actionable insights from raw data in seconds with natural language.'
   },

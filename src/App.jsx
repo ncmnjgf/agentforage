@@ -10,9 +10,16 @@ import Dashboard from './pages/Dashboard';
 import NotFound from './pages/NotFound';
 import Pricing from './pages/Pricing';
 import ForCreators from './pages/ForCreators';
+import MyPurchases from './pages/MyPurchases';
+import DownloadPage from './pages/DownloadPage';
+import UploadTool from './pages/UploadTool';
+import MyTools from './pages/MyTools';
+import Earnings from './pages/Earnings';
+import Orders from './pages/Orders';
 import ProtectedRoute from './components/ProtectedRoute';
 import ScrollToTop from './components/ScrollToTop';
 import PageTransition from './components/PageTransition';
+import DashboardLayout from './layouts/DashboardLayout';
 
 function AnimatedRoutes() {
   const location = useLocation();
@@ -30,7 +37,17 @@ function AnimatedRoutes() {
         
         {/* Protected Routes */}
         <Route element={<ProtectedRoute />}>
-          <Route path="/dashboard" element={<PageTransition><Dashboard /></PageTransition>} />
+          <Route element={<DashboardLayout />}>
+            <Route path="/dashboard" element={<PageTransition><Dashboard /></PageTransition>} />
+            <Route path="/my-purchases" element={<PageTransition><MyPurchases /></PageTransition>} />
+            <Route path="/download/:id" element={<PageTransition><DownloadPage /></PageTransition>} />
+            
+            {/* Creator Routes */}
+            <Route path="/creator/upload" element={<PageTransition><UploadTool /></PageTransition>} />
+            <Route path="/creator/my-tools" element={<PageTransition><MyTools /></PageTransition>} />
+            <Route path="/creator/earnings" element={<PageTransition><Earnings /></PageTransition>} />
+            <Route path="/creator/orders" element={<PageTransition><Orders /></PageTransition>} />
+          </Route>
         </Route>
         
         {/* 404 Catch-All */}

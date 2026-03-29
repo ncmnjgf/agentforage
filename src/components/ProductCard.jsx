@@ -8,42 +8,42 @@ const ProductCard = ({ product }) => {
   const IconComponent = Icons[product.iconName] || Icons.HelpCircle;
 
   return (
-    <Card hoverEffect padding="none" className="h-full flex flex-col group cursor-pointer border border-slate-700/50 bg-slate-800/40">
-      <Link to={`/product/${product.id}`} className="flex flex-col h-full flex-grow">
-        <div className={`h-32 bg-gradient-to-br ${product.color} flex items-center justify-center relative overflow-hidden shrink-0`}>
-          <div className="absolute inset-0 bg-slate-900/40 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-          <IconComponent className="w-8 h-8 text-white/80 group-hover:scale-110 transition-transform duration-300 relative z-10" />
+    <Card hoverEffect padding="none" className="h-[400px] flex flex-col group cursor-pointer border-none bg-white transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-[var(--color-primary)]/20 relative overflow-hidden rounded-[2rem]">
+      <Link to={`/product/${product.id}`} className="flex flex-col h-full flex-grow relative z-10">
+        <div className={`h-36 bg-[var(--color-surface-lowest)] flex items-center justify-center relative overflow-hidden shrink-0`}>
+          <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-primary)]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+          <IconComponent className="w-10 h-10 text-[var(--color-primary)]/40 group-hover:scale-110 group-hover:text-[var(--color-primary)] transition-all duration-300 relative z-10" />
         </div>
         
         <div className="p-6 flex flex-col flex-grow">
-          <div className="flex justify-between items-start mb-2">
+          <div className="flex justify-between items-start mb-3">
             <div>
-              <span className="text-xs font-medium text-purple-400 mb-2 block uppercase tracking-wider">
+              <span className="text-[0.7rem] font-bold text-[var(--color-primary)] mb-2 block uppercase tracking-widest font-manrope">
                 {product.tag}
               </span>
-              <h3 className="text-lg font-bold text-slate-100 group-hover:text-purple-300 transition-colors line-clamp-1">
+              <h3 className="text-lg font-manrope font-extrabold text-[var(--color-on-surface)] group-hover:text-[var(--color-primary)] transition-colors line-clamp-1">
                 {product.title}
               </h3>
-              <p className="text-slate-400 text-sm mt-1">By <span className="text-slate-300 font-medium">{product.creator}</span></p>
+              <p className="text-[var(--color-secondary)] text-xs mt-1 font-semibold">By <span className="text-[var(--color-on-surface)]">{product.creator}</span></p>
             </div>
           </div>
           
-          <p className="text-slate-500 text-sm mt-2 line-clamp-2">{product.description}</p>
+          <p className="text-[var(--color-secondary)] text-sm mt-2 line-clamp-2 leading-relaxed">{product.description}</p>
           
-          <div className="mt-auto pt-6 flex items-center justify-between border-t border-slate-700/50">
+          <div className="mt-auto pt-6 flex items-center justify-between">
             <div className="flex flex-col">
-              <span className="text-xs text-slate-500">Starting at</span>
-              <span className="text-lg font-bold text-white">{product.price}</span>
+              <span className="text-[0.65rem] font-bold uppercase tracking-wider text-[var(--color-secondary)] opacity-60">Investment</span>
+              <span className="text-xl font-manrope font-extrabold text-[var(--color-primary)]">{product.price}</span>
             </div>
             
-            <div className="flex items-center gap-2">
-              <div className="flex items-center gap-1 text-amber-400 text-sm font-medium mr-2">
+            <div className="flex items-center gap-3">
+              <div className="flex items-center gap-1 text-[#f59e0b] text-sm font-bold">
                 <Icons.Star className="w-3.5 h-3.5 fill-current" />
                 {product.rating}
               </div>
-              <Button variant="ghost" size="sm" className="text-purple-400 hover:bg-purple-500/10 shrink-0">
-                Details
-              </Button>
+              <div className="w-8 h-8 rounded-full bg-[var(--color-surface-lowest)] flex items-center justify-center border border-[var(--color-outline-variant)]/20 text-[var(--color-primary)] group-hover:bg-[var(--color-primary)] group-hover:text-white transition-all">
+                <Icons.ArrowRight className="w-4 h-4" />
+              </div>
             </div>
           </div>
         </div>

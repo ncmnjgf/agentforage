@@ -22,11 +22,11 @@ const Button = forwardRef(
 
     const variants = {
       primary:
-        'bg-purple-600 hover:bg-purple-500 text-white shadow-lg shadow-purple-900/20 focus:ring-purple-500',
+        'bg-[var(--color-primary)] hover:opacity-90 text-white shadow-lg shadow-[var(--color-primary)]/20 focus:ring-[var(--color-primary)]',
       secondary:
         'bg-slate-800 hover:bg-slate-700 text-slate-100 border border-slate-700 focus:ring-slate-500',
       outline:
-        'bg-transparent border border-purple-500/50 hover:border-purple-500 hover:bg-purple-500/10 text-purple-400 focus:ring-purple-500',
+        'bg-transparent border border-[var(--color-primary)]/50 hover:border-[var(--color-primary)] hover:bg-[var(--color-primary)]/10 text-[var(--color-primary)] focus:ring-[var(--color-primary)]',
       ghost:
         'bg-transparent hover:bg-slate-800 text-slate-300 hover:text-white focus:ring-slate-500',
       danger:

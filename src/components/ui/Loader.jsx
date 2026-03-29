@@ -11,8 +11,8 @@ const Loader = ({ size = 'md', text, fullScreen = false }) => {
   const content = (
     <div className="flex flex-col items-center justify-center gap-3">
       <div className="relative">
-        <div className={`absolute inset-0 rounded-full blur-md bg-purple-500/30 animate-pulse`} />
-        <Loader2 className={`${sizes[size]} text-purple-500 animate-spin relative z-10`} />
+        <div className={`absolute inset-0 rounded-full blur-md bg-[var(--color-primary)]/20 animate-pulse`} />
+        <Loader2 className={`${sizes[size]} text-[var(--color-primary)] animate-spin relative z-10`} />
       </div>
       {text && <p className="text-slate-400 font-medium text-sm animate-pulse">{text}</p>}
     </div>

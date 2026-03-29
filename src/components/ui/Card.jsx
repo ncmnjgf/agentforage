@@ -18,7 +18,7 @@ const Card = ({
     : 'bg-slate-800 border border-slate-700 shadow-lg';
 
   const hover = hoverEffect 
-    ? 'hover:-translate-y-1 hover:shadow-2xl hover:shadow-purple-900/20 hover:border-purple-500/30 transition-all duration-300' 
+    ? 'hover:-translate-y-1 hover:shadow-2xl hover:shadow-[var(--color-primary)]/10 hover:border-[var(--color-primary)]/20 transition-all duration-300' 
     : '';
 
   return (

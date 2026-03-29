@@ -5,29 +5,29 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-slate-950 border-t border-slate-800 pt-16 pb-8">
+    <footer className="bg-[var(--color-surface-low)] border-t border-[var(--color-outline-variant)]/20 pt-20 pb-10">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-16 mb-16">
           
           {/* Brand */}
           <div className="col-span-1 md:col-span-1">
-            <Link to="/" className="flex items-center gap-2 group mb-4">
-              <img src="/images/logoagent.jpg"  alt="Aivora Logo" className="w-7 h-7 object-contain" />
-              <span className="text-lg font-bold tracking-tight text-white">
+            <Link to="/" className="flex items-center gap-3 group mb-6">
+              <img src="/images/logoagent.jpg" alt="Aivora Logo" className="w-8 h-8 object-contain" />
+              <span className="text-xl font-manrope font-extrabold tracking-tight text-[var(--color-on-surface)]">
                 Aivora
               </span>
             </Link>
-            <p className="text-slate-400 text-sm leading-relaxed mb-6">
-              The premier marketplace to discover, buy, and sell state-of-the-art AI agents. Build the future, faster.
+            <p className="text-[var(--color-secondary)] text-sm leading-relaxed mb-8 font-inter">
+              The premier platform for world-class AI agents and precision-engineered digital tools. Empowering creators to build the future.
             </p>
-            <div className="flex items-center gap-4">
-              <a href="#" className="p-2 bg-slate-900 border border-slate-800 rounded-full text-slate-400 hover:text-purple-400 hover:border-purple-500/30 transition-all">
+            <div className="flex items-center gap-5">
+              <a href="#" className="p-2.5 bg-[var(--color-surface-lowest)] border border-[var(--color-outline-variant)]/20 rounded-full text-[var(--color-secondary)] hover:text-[var(--color-primary)] hover:border-[var(--color-primary)]/40 transition-all shadow-sm">
                 <Twitter className="w-4 h-4" />
               </a>
-              <a href="#" className="p-2 bg-slate-900 border border-slate-800 rounded-full text-slate-400 hover:text-purple-400 hover:border-purple-500/30 transition-all">
+              <a href="#" className="p-2.5 bg-[var(--color-surface-lowest)] border border-[var(--color-outline-variant)]/20 rounded-full text-[var(--color-secondary)] hover:text-[var(--color-primary)] hover:border-[var(--color-primary)]/40 transition-all shadow-sm">
                 <Github className="w-4 h-4" />
               </a>
-              <a href="#" className="p-2 bg-slate-900 border border-slate-800 rounded-full text-slate-400 hover:text-purple-400 hover:border-purple-500/30 transition-all">
+              <a href="#" className="p-2.5 bg-[var(--color-surface-lowest)] border border-[var(--color-outline-variant)]/20 rounded-full text-[var(--color-secondary)] hover:text-[var(--color-primary)] hover:border-[var(--color-primary)]/40 transition-all shadow-sm">
                 <Linkedin className="w-4 h-4" />
               </a>
             </div>
@@ -35,43 +35,44 @@ const Footer = () => {
 
           {/* Links 1 */}
           <div>
-            <h3 className="text-white font-medium mb-4">Marketplace</h3>
-            <ul className="space-y-3">
-              <li><Link to="/browse" className="text-slate-400 hover:text-purple-400 text-sm transition-colors">Browse Agents</Link></li>
-              <li><Link to="/browse" className="text-slate-400 hover:text-purple-400 text-sm transition-colors">Categories</Link></li>
-              <li><Link to="/browse" className="text-slate-400 hover:text-purple-400 text-sm transition-colors">Top Sellers</Link></li>
-              <li><Link to="/browse" className="text-slate-400 hover:text-purple-400 text-sm transition-colors">New Arrivals</Link></li>
+            <h3 className="text-[var(--color-on-surface)] font-manrope font-bold text-sm uppercase tracking-widest mb-6">Marketplace</h3>
+            <ul className="space-y-4">
+              <li><Link to="/browse" className="text-[var(--color-secondary)] hover:text-[var(--color-primary)] text-sm font-semibold transition-colors">Browse Marketplace</Link></li>
+              <li><Link to="/browse" className="text-[var(--color-secondary)] hover:text-[var(--color-primary)] text-sm font-semibold transition-colors">Top Agents</Link></li>
+              <li><Link to="/browse" className="text-[var(--color-secondary)] hover:text-[var(--color-primary)] text-sm font-semibold transition-colors">Curated Trends</Link></li>
+              <li><Link to="/browse" className="text-[var(--color-secondary)] hover:text-[var(--color-primary)] text-sm font-semibold transition-colors">New Essentials</Link></li>
             </ul>
           </div>
 
           {/* Links 2 */}
           <div>
-            <h3 className="text-white font-medium mb-4">Creators</h3>
-            <ul className="space-y-3">
-              <li><Link to="/browse" className="text-slate-400 hover:text-purple-400 text-sm transition-colors">Become a Seller</Link></li>
-              <li><Link to="/dashboard" className="text-slate-400 hover:text-purple-400 text-sm transition-colors">Creator Dashboard</Link></li>
-              <li><Link to="/browse" className="text-slate-400 hover:text-purple-400 text-sm transition-colors">Documentation</Link></li>
-              <li><Link to="/browse" className="text-slate-400 hover:text-purple-400 text-sm transition-colors">Guidelines</Link></li>
+            <h3 className="text-[var(--color-on-surface)] font-manrope font-bold text-sm uppercase tracking-widest mb-6">Creators</h3>
+            <ul className="space-y-4">
+              <li><Link to="/signup" className="text-[var(--color-secondary)] hover:text-[var(--color-primary)] text-sm font-semibold transition-colors">Join as Creator</Link></li>
+              <li><Link to="/dashboard" className="text-[var(--color-secondary)] hover:text-[var(--color-primary)] text-sm font-semibold transition-colors">Creator Center</Link></li>
+              <li><Link to="/browse" className="text-[var(--color-secondary)] hover:text-[var(--color-primary)] text-sm font-semibold transition-colors">Developer Docs</Link></li>
+              <li><Link to="/browse" className="text-[var(--color-secondary)] hover:text-[var(--color-primary)] text-sm font-semibold transition-colors">Brand Guidelines</Link></li>
             </ul>
           </div>
 
           {/* Links 3 */}
           <div>
-            <h3 className="text-white font-medium mb-4">Company</h3>
-            <ul className="space-y-3">
-              <li><Link to="/browse" className="text-slate-400 hover:text-purple-400 text-sm transition-colors">About Us</Link></li>
-              <li><Link to="/browse" className="text-slate-400 hover:text-purple-400 text-sm transition-colors">Blog</Link></li>
-              <li><Link to="/browse" className="text-slate-400 hover:text-purple-400 text-sm transition-colors">Privacy Policy</Link></li>
-              <li><Link to="/browse" className="text-slate-400 hover:text-purple-400 text-sm transition-colors">Terms of Service</Link></li>
+            <h3 className="text-[var(--color-on-surface)] font-manrope font-bold text-sm uppercase tracking-widest mb-6">Company</h3>
+            <ul className="space-y-4">
+              <li><Link to="/browse" className="text-[var(--color-secondary)] hover:text-[var(--color-primary)] text-sm font-semibold transition-colors">Our Vision</Link></li>
+              <li><Link to="/browse" className="text-[var(--color-secondary)] hover:text-[var(--color-primary)] text-sm font-semibold transition-colors">Engineering Blog</Link></li>
+              <li><Link to="/browse" className="text-[var(--color-secondary)] hover:text-[var(--color-primary)] text-sm font-semibold transition-colors">Privacy Charter</Link></li>
+              <li><Link to="/browse" className="text-[var(--color-secondary)] hover:text-[var(--color-primary)] text-sm font-semibold transition-colors">Terms of Use</Link></li>
             </ul>
           </div>
 
         </div>
         
-        <div className="pt-8 border-t border-slate-900 flex flex-col md:flex-row items-center justify-between text-slate-500 text-sm">
-          <p>© {currentYear} Aivora. All rights reserved.</p>
-          <div className="flex gap-4 mt-4 md:mt-0">
-            <span>Built with React & Vite</span>
+        <div className="pt-10 border-t border-[var(--color-outline-variant)]/20 flex flex-col md:flex-row items-center justify-between text-[var(--color-secondary)] text-sm font-semibold">
+          <p>© {currentYear} Aivora. Precision Engineered.</p>
+          <div className="flex gap-6 mt-4 md:mt-0">
+            <span className="opacity-60">Verified Quality</span>
+            <span className="opacity-60">Premium Curation</span>
           </div>
         </div>
       </div>
