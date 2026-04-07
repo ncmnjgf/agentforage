@@ -20,6 +20,7 @@ import ProtectedRoute from './components/ProtectedRoute';
 import ScrollToTop from './components/ScrollToTop';
 import PageTransition from './components/PageTransition';
 import DashboardLayout from './layouts/DashboardLayout';
+import AivoraLanding from './pages/AivoraLanding';
 
 function AnimatedRoutes() {
   const location = useLocation();
@@ -27,7 +28,8 @@ function AnimatedRoutes() {
   return (
     <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>
-        <Route path="/" element={<PageTransition><Home /></PageTransition>} />
+        <Route path="/" element={<AivoraLanding />} />
+        <Route path="/old-home" element={<PageTransition><Home /></PageTransition>} />
         <Route path="/browse" element={<PageTransition><Browse /></PageTransition>} />
         <Route path="/product/:id" element={<PageTransition><ProductDetail /></PageTransition>} />
         <Route path="/login" element={<PageTransition><Login /></PageTransition>} />
@@ -58,14 +60,30 @@ function AnimatedRoutes() {
 }
 
 function App() {
-  return (
-    <BrowserRouter>
-      <ScrollToTop />
-      <MainLayout>
+  const location = useLocation();
+  const isAgentForge = location.pathname === '/';
+
+  if (isAgentForge) {
+    return (
+      <>
+        <ScrollToTop />
         <AnimatedRoutes />
-      </MainLayout>
-    </BrowserRouter>
+      </>
+    );
+  }
+
+  return (
+    <MainLayout>
+      <ScrollToTop />
+      <AnimatedRoutes />
+    </MainLayout>
   );
 }
 
-export default App;
+const AppWrapper = () => (
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>
+);
+
+export default AppWrapper;

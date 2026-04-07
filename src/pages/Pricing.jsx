@@ -215,14 +215,14 @@ const Pricing = () => {
       <section className="max-w-4xl mx-auto px-6 text-center mb-20">
         <motion.div {...fadeIn}>
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[var(--color-primary)]/10 text-[var(--color-primary)] text-xs font-bold uppercase tracking-widest mb-6">
-            <Sparkles size={12} /> Elite Architectural Tiers
+            <Sparkles size={12} /> Flexible Pricing Tiers
           </div>
           <h1 className="text-4xl md:text-6xl font-manrope font-extrabold text-[var(--color-on-surface)] tracking-tight mb-6">
             Investment Plans for <br />
-            <span className="text-[var(--color-primary)]">Sovereign Creators</span>
+            <span className="text-[var(--color-primary)]">AI Market Leaders</span>
           </h1>
           <p className="text-lg text-[var(--color-secondary)] font-semibold leading-relaxed max-w-2xl mx-auto mb-10">
-            Precision-engineered access to the world's most advanced digital assets. Discover your perfect fit.
+            Get access to the world's most advanced AI agents. Choose the perfect plan for your automation needs.
           </p>
 
           {/* Toggle */}
@@ -235,7 +235,7 @@ const Pricing = () => {
               <div className={`w-4 h-4 rounded-full bg-white transition-transform ${isYearly ? 'translate-x-6' : 'translate-x-0'}`} />
             </button>
             <span className={`text-sm font-bold ${isYearly ? 'text-[var(--color-on-surface)]' : 'text-[var(--color-secondary)]'}`}>
-              Annual <span className="ml-1 text-[var(--color-primary)] text-[0.7rem] bg-[var(--color-primary)]/10 px-2 py-0.5 rounded-full uppercase tracking-widest">Privilege: -20%</span>
+              Annual <span className="ml-1 text-[var(--color-primary)] text-[0.7rem] bg-[var(--color-primary)]/10 px-2 py-0.5 rounded-full uppercase tracking-widest">Save 20%</span>
             </span>
           </div>
         </motion.div>
